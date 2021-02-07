@@ -6,4 +6,4 @@ Follow the next steps to run the project:
 3.- then open your browser with this url: http://localhost:8080/
 
 or visit this website:
-https://encoora-proj-17tuecwbm.vercel.app/
+https://encoora-proj.vercel.app/
