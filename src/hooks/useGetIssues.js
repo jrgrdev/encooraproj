@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from 'react'
 import { IssueContext } from '../context/IssuesContext'
 import { IssueFilterContext } from '../context/IssuesFilterContext'
 
+import getIssues from '../services/issues/getIssues'
+
 export function useGetIssues () {
   const [issues, setIssues] = useState([])
   const [loading, setLoading] = useState(false)
@@ -10,8 +12,7 @@ export function useGetIssues () {
 
   useEffect(() => {
     setLoading(true)
-    window.fetch('https://api.github.com/repos/facebook/react/issues')
-      .then(response => response.json())
+    getIssues()
       .then(res => {
         setLoading(false)
         setIssuesContext(res)

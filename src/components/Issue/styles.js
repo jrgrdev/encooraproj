@@ -10,7 +10,8 @@ export const ListItem = styled.li`
 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
-  &:focus {
+  &:focus,
+  :hover {
     background: #39CCCC;
   }
 `
