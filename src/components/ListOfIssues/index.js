@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useGetIssues } from '../../hooks/useGetIssues'
 import { Issue } from '../Issue'
 import { List } from './styles'
@@ -14,15 +14,19 @@ export const ListOfIssues = () => {
   const handleOnKeyDown = (evt) => {
     switch (evt.key) {
       case 'ArrowDown':
-        setCurrentItem(currentItem + 1)
-        listRef.current.childNodes[currentItem + 1].focus()
+        currentItem < issues.length - 1 && setCurrentItem(currentItem + 1)
         break
       case 'ArrowUp':
         currentItem > 0 && setCurrentItem(currentItem - 1)
-        listRef.current.childNodes[currentItem - 1].focus()
         break
     }
   }
+
+  useEffect(() => {
+    if (listRef.current && listRef.current.childNodes.length > 0) {
+      listRef.current.childNodes[currentItem].focus()
+    }
+  }, [currentItem])
 
   const handleOnClickIndex = (index) => () => {
     setCurrentItem(index)
