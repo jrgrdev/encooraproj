@@ -1,10 +1,9 @@
 ## Encora project
 
-Steps to run this project:
-
+Follow the next steps to run the project:
 1.- npm install
 2.- npm run dev
+3.- then open your browser with this url: http://localhost:8080/
 
 or visit this website:
-
-https://encoora-proj-e1he8ltwq.vercel.app/
+https://encoora-proj-17tuecwbm.vercel.app/
